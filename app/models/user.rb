@@ -10,4 +10,5 @@ class User < ApplicationRecord
     validates_associated :trades, :groups
     validates :name, length: { minimum: 2 }
 
+
 end
