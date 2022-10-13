@@ -1,4 +1,3 @@
 class StaticPageController < ApplicationController
-  def splashscreen
-  end
+  def splashscreen; end
 end
