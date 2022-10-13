@@ -1,0 +1,2 @@
+Rails.application.credentials.google_maps_key
+EDITOR="code --wait" bin/rails credentials:edit
