@@ -1,0 +1,7 @@
+<h1>Add a transaction Group</h1>
+
+<%= form_with(model: [ User.new, Group.new, Trade.new], url: user_group_trades_path, method: :post) do |form| %>
+    <%= form.text_field :name %>
+    <%= form.text_field :amount %>
+    <%= form.submit %>
+<% end %>

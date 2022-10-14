@@ -1,0 +1,9 @@
+<h1>Groups#index</h1>
+
+<%= link_to "new group", new_user_group_path(current_user) %>
+
+<ul>
+    <% @groups.each do |group| %>
+        <a href=<%=user_group_trades_path(current_user, group)%>><li> <%= group.name %> </a> </li>
+    <% end %>
+</ul>
