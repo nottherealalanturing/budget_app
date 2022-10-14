@@ -1,9 +1,7 @@
 class TradesController < ApplicationController
-  def new
-  end
+  def new; end
 
-  def show
-  end
+  def show; end
 
   def index
     @group = current_user.groups.find(params[:group_id])
@@ -29,7 +27,8 @@ class TradesController < ApplicationController
   end
 
   private
-    def trade_params
-      params.require(:trade).permit(:name, :amount)
-    end
+
+  def trade_params
+    params.require(:trade).permit(:name, :amount)
+  end
 end

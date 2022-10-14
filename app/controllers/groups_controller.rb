@@ -1,5 +1,5 @@
 class GroupsController < ApplicationController
-  def index 
+  def index
     @groups = Group.where(author_id: current_user.id)
   end
 
@@ -13,7 +13,7 @@ class GroupsController < ApplicationController
     @group = current_user.groups.new(group_params)
 
     if @group.save
-      flash[:info] = "Created succesfully"
+      flash[:info] = 'Created succesfully'
       redirect_to user_groups_path
     else
       render 'new', status: :unprocessable_entity
@@ -21,7 +21,8 @@ class GroupsController < ApplicationController
   end
 
   private
-    def group_params
-      params.require(:group).permit(:name)
-    end
+
+  def group_params
+    params.require(:group).permit(:name)
+  end
 end
