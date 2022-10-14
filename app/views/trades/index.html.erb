@@ -1,0 +1,11 @@
+<h1>TradeGroups#index</h1>
+
+<%= link_to "new trade", new_user_group_trade_path(current_user, params[:group_id]) %>
+
+<ul>
+    <% @trades.each do |trade| %>
+        <a href=<%=user_group_trade_path(current_user, params[:group_id], trade.id)%>><li> <%= trade.name %> </a> </li>
+    <% end %>
+</ul>
+
+<%= link_to "back to groups", user_groups_path(current_user) %>

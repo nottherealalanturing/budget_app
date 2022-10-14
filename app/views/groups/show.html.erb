@@ -1,0 +1,4 @@
+<p> <%= @group.name  %> </p>
+
+<%= link_to "add new transaction", new_user_group_trade_path(current_user, @group) %>
+<%= link_to "back to groups", user_groups_path %>
