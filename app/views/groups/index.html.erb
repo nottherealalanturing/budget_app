@@ -1,9 +1,31 @@
-<h1>Groups#index</h1>
+<nav class="bg-[#3778C2] text-white p-2">
+  <ul class="flex justify-between mr-6">
+    <li class="text-4xl">
+      <i class="fa fa-navicon"></i>
+    </li>
+    <li>
+      <h2 class="font-bold text-3xl">Groups</h2>
+    </li>
+    <li class="font-bold text-4xl">
+      <%= button_to destroy_user_session_path, method: :delete do %>   
+        <i class="fa fa-sign-out"></i>
+      <% end %>
+    </li>
+  </ul>
+</nav>
 
-<%= link_to "new group", new_user_group_path(current_user) %>
-
-<ul>
+<div id="categories">
+  <% if @groups.any? %>
     <% @groups.each do |group| %>
-        <a href=<%=user_group_trades_path(current_user, group)%>><li> <%= group.name %> </a> </li>
+      <%= link_to user_group_path(current_user, group), class: "text-black no-underline" do %>
+        <%= render group %>
+      <% end %>
     <% end %>
-</ul>
+  <% else %>
+  <p class="text-base text-center font-bold">There are no groups. Please add a group</p>
+  <% end %>
+</div>
+<div class="bg-[#5FB523] p-2 flex justify-center fixed-bottom">
+  <%= link_to "New group", new_user_group_path(current_user), class: "btn btn-outline-dark w-75 p-2" %>
+</div>
+

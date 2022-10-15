@@ -1,6 +1,13 @@
-<h1>BudgetApp</h1>
-<p>lorem ipsum aloepsum aloepsum aloepsum aloepsum aloepsum aloepsum aloepsum aloepsum aloepsum aloe</p>
+<div class="flex flex-col gap-4 justify-center items-center my-36 font-bold">
+  <div class="mx-6 flex flex-col gap-2">
+    <%= image_tag "budget.png" %>
+    <h5 class="text-[#9D47FF] text-center italic">Budget App</h5>
+  </div>
 
-<%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
-<%= link_to "Sign in", new_user_session_path %>
-<%= link_to "Sign up", new_user_registration_path %>
+  <div class="border-solid border-1 bg-[#3778C2] w-11/12 text-center p-2">
+    <%= link_to "Log in", new_user_session_path, class: "text-decoration-none text-white" %>
+  </div>
+  <div class="border-solid border-1 bg-[#3778C2] w-11/12 text-center p-2">
+    <%= link_to "Sign Up", new_user_registration_path, class: "text-decoration-none text-white"%>
+  </div>
+</div>

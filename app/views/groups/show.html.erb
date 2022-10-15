@@ -1,4 +1,51 @@
-<p> <%= @group.name  %> </p>
+<nav class="bg-[#3778C2] text-white p-1">
+  <ul class="flex justify-between items-center mr-6 mt-2">
+    <li class="text-3xl">
+      <%= link_to user_groups_path(current_user), class: "text-white" do %>
+        <i class="fa fa-arrow-left"></i>
+      <% end %>
+    </li>
+    <li>
+      <h2 class="font-bold text-xl pt-3">Group Details</h2>
+    </li>
+    <li class="font-bold text-4xl">
+      <%= button_to destroy_user_session_path, method: :delete do %>   
+        <i class="fa fa-sign-out"></i>
+      <% end %>
+    </li>
+  </ul>
+</nav>
 
-<%= link_to "add new transaction", new_user_group_trade_path(current_user, @group) %>
-<%= link_to "back to groups", user_groups_path %>
+<%= render @group %>
+<div class="mx-6">
+  <%= button_to "Delete Group", user_group_path(current_user, @group), method: :delete, class: "btn btn-danger"%>
+</div>
+
+
+<h1 class="text-center font-bold text-xl mt-12">Trades</h1>
+<div class="d-flex justify-content-end mr-6 my-3">
+  <%= link_to "New Transaction", new_user_group_trade_path(current_user, @group), class: "btn btn-primary" %>
+</div>
+
+<% if @group.trades.any? %>
+  <div class="mx-4 md:mx-48 border-solid border-1 bg-[#F5F5F5] p-4">
+    <% @group.trades.order(created_at:'DESC').each do |trade| %>
+      <div class="flex justify-between border-solid border-1 bg-white py-3 px-4 mb-3">
+        <div class="flex flex-col justify-center pt-1">
+          <p class="font-bold italic"><%= trade.name %></p>
+          <p class="font-bold italic"><%= trade.created_at.strftime("%d-%b-%Y")%></p></p>
+        </div>
+        <div class="flex flex-col">
+          <p class="font-bold">$<%= trade.amount %></p>
+          <%=button_to "Delete", user_group_trade_path(current_user, @group, trade), method: :delete, class:"btn btn-primary px-2"%>
+        </div>
+      </div>
+    <% end %>
+  <div>
+<% else %>
+  <p class="font bold italic text-center text-base mx-6">There are no trades to show. Please Add a new transaction</p>
+<% end %>
+
+
+
+
