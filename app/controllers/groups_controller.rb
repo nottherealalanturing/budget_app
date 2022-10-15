@@ -23,9 +23,11 @@ class GroupsController < ApplicationController
   end
 
   def destroy
-    @group = current_user.groups.find(params[:group_id])
-    @group.destroy
-    redirect_to user_groups_path(current_user), status: :see_other, notice: 'Group was successfully destroyed.'
+    if current_user.groups.find(params[:id]).delete
+      redirect_to user_groups_path(current_user), status: :see_other, notice: 'Group was successfully destroyed.'
+    else
+      flash[:error] = 'Unable to delete'
+    end
   end
 
   private
