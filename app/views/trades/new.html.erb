@@ -1,7 +1,25 @@
-<h1>Add a transaction Group</h1>
+<nav class="bg-[#3778C2] text-white py-2">
+  <ul class="flex justify-between mr-4">
+    <li class="text-3xl">
+      <%= link_to user_groups_path(current_user), class: "text-white" do %>
+        <i class="fa fa-arrow-left"></i>
+      <% end %>
+    </li>
+    <li>
+      <h2 class="font-bold text-2xl">New Transaction</h2>
+    </li>
+    <li class="font-bold text-4xl">
+      <%= button_to destroy_user_session_path, method: :delete do %>   
+        <i class="fa fa-sign-out"></i>
+      <% end %>
+    </li>
+  </ul>
+</nav>
 
-<%= form_with(model: [ User.new, Group.new, Trade.new], url: user_group_trades_path, method: :post) do |form| %>
-    <%= form.text_field :name %>
-    <%= form.text_field :amount %>
-    <%= form.submit %>
-<% end %>
+<div class="py-20">
+  <%= render "form", trade: @trade %>
+</div>
+
+<br>
+
+
