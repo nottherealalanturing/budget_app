@@ -15,8 +15,8 @@ RSpec.describe User, type: :model do
 
     it 'is valid with attributes' do
       subject.name = 'Test User'
-      subject.email = "test@email.com"
-      subject.password = "testpassword"
+      subject.email = 'test@email.com'
+      subject.password = 'testpassword'
       expect(subject).to be_valid
     end
   end
