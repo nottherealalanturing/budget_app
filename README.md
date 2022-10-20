@@ -10,6 +10,9 @@
 
 ## Live Link
  https://deliciouscash.herokuapp.com
+ 
+## Demo Link
+ https://www.loom.com/share/7516f94388dc4416af02484322b8b0cf
 
 ## Getting Started
 
