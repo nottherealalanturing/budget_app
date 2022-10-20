@@ -8,7 +8,8 @@
 - Ruby on Rails v7.0.4
 - Gems used for testing: Capybara, Rspec-Rails, and Shoulda-matchers.
 
-## Live Demo
+## Live Link
+ https://deliciouscash.herokuapp.com
 
 ## Getting Started
 
