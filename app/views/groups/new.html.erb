@@ -1,0 +1,16 @@
+<nav class="bg-[#3778C2] text-white p-1">
+  <ul class="flex justify-start gap-5 p-2">
+    <li class="text-3xl mr-4">
+      <%= link_to user_groups_path(current_user), class: "text-white" do %>
+        <i class="fa fa-arrow-left"></i>
+      <% end %>
+    </li>
+    <li>
+      <h2 class="font-bold text-3xl">Add A Group</h2>
+    </li>
+  </ul>
+</nav>
+
+<div class="my-20">
+  <%= render "form", group: @group %>
+</div>
