@@ -88,7 +88,8 @@ Start by:
 Give a ⭐️ if you like this project!
 
 ## Acknowledgments
-
+    
+- This web application UI design was inspired by [Gregoire Vella on Behance](https://www.behance.net/gregoirevella).
 - [Microverse](https://www.microverse.org)
 
 ## 📝 License
