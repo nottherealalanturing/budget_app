@@ -41,14 +41,14 @@ Setup database with:
 ```Ruby
    rails db:create
    rails db:migrate
-   rails db:seed
 ```
 
 Start server with:
 
 ```Ruby
+    ./bin/bundle add tailwindcss-rails
+    ./bin/rails tailwindcss:install
     ./bin/dev
-    rails s -p 3001
 ```
 
 Then open a web page and go to [port 3001 on your local machine.](http://localhost:3001)
