@@ -47,6 +47,7 @@ Setup database with:
 Start server with:
 
 ```Ruby
+    ./bin/dev
     rails s -p 3001
 ```
 
